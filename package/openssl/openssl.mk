@@ -45,7 +45,6 @@ openssl/shrink_opts = \
   no-dso \
   no-dtls \
   no-dynamic-engine \
-  no-ecx \
   no-egd \
   no-engine \
   no-external-tests \
