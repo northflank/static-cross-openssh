@@ -15,6 +15,17 @@ changes. For example, versions `0.2.x` are not compatible with `0.1.x`.
 
 There are no unreleased changes at this time.
 
+## [0.2.8-nf2] - 2026-11-09
+
+### Changed
+
+* OpenSSH began using OpenSSL's built-in ED25519 signature support via
+  `libcrypto` [somewhere around `10.3p1`](https://github.com/openssh/openssh-portable/commit/266647c5f2075d397bd5ed5316450183eda73388).
+  This change means we need to bring ECX support back in to the compiled
+  OpenSSL libs (remove `no-ecx`), otherwise SSH connections can fail
+  during preauth with no real useful information being provided in either
+  side's logs. RSA and ECDSA signatures were not impacted.
+
 ## [0.2.8-nf] - 2026-11-06
 
 ### Changed
